@@ -13,7 +13,6 @@ $aliases = @{
     'Set-IzTemperature' = 'Set-IzSetpoint'
     'Get-IzTemperature' = 'Get-IzSetPoint'
 }
-write-host $aliases.keys
 
 foreach ($a in $aliases.Keys) {
     if (-not (Get-Command $a -ErrorAction SilentlyContinue)) {

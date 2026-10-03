@@ -15,21 +15,3 @@ function Set-IzSleepTimer {
     $body = @{ SleepTimer = $SleepTimer }
     Invoke-IzCommand -Command "SleepTimer" -Body $body
 }
-
-function Enable-SleepTimer {
-    [CmdletBinding()]
-    param(
-        [Parameter(Mandatory=$true)]
-        [ValidateRange(1, 120)]
-        [int]$SleepTimer
-    )
-
-    Set-IzSleepTimer -SleepTimer $SleepTimer
-}
-
-function Disable-SleepTimer {
-    [CmdletBinding()]
-    param()
-
-    Set-IzSleepTimer -SleepTimer 0
-}
